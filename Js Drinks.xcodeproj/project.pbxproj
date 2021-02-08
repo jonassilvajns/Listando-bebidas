@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		DD4BC66925CC668B009A851C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BC66825CC668B009A851C /* AppDelegate.swift */; };
-		DD4BC66B25CC668B009A851C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BC66A25CC668B009A851C /* SceneDelegate.swift */; };
 		DD4BC66D25CC668B009A851C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BC66C25CC668B009A851C /* ViewController.swift */; };
 		DD4BC67025CC668B009A851C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4BC66E25CC668B009A851C /* Main.storyboard */; };
 		DD4BC67225CC668F009A851C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD4BC67125CC668F009A851C /* Assets.xcassets */; };
 		DD4BC67525CC668F009A851C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4BC67325CC668F009A851C /* LaunchScreen.storyboard */; };
+		DD4BC67E25CC66B9009A851C /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BC67D25CC66B9009A851C /* Drink.swift */; };
+		DD4BC68225CC673D009A851C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BC68125CC673D009A851C /* API.swift */; };
+		DD4BC69E25CC75A8009A851C /* DrinksListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BC69D25CC75A8009A851C /* DrinksListingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD4BC66525CC668B009A851C /* Js Drinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Js Drinks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4BC66825CC668B009A851C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD4BC66A25CC668B009A851C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD4BC66C25CC668B009A851C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD4BC66F25CC668B009A851C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD4BC67125CC668F009A851C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD4BC67425CC668F009A851C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD4BC67625CC668F009A851C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD4BC67D25CC66B9009A851C /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		DD4BC68125CC673D009A851C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DD4BC69D25CC75A8009A851C /* DrinksListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		DD4BC66725CC668B009A851C /* Js Drinks */ = {
 			isa = PBXGroup;
 			children = (
-				DD4BC66825CC668B009A851C /* AppDelegate.swift */,
-				DD4BC66A25CC668B009A851C /* SceneDelegate.swift */,
-				DD4BC66C25CC668B009A851C /* ViewController.swift */,
+				DD4BC68A25CC67FA009A851C /* Model */,
+				DD4BC68B25CC6801009A851C /* View */,
 				DD4BC66E25CC668B009A851C /* Main.storyboard */,
-				DD4BC67125CC668F009A851C /* Assets.xcassets */,
-				DD4BC67325CC668F009A851C /* LaunchScreen.storyboard */,
+				DD4BC68C25CC6807009A851C /* Controller */,
+				DD4BC68D25CC6823009A851C /* Data */,
 				DD4BC67625CC668F009A851C /* Info.plist */,
+				DD4BC66825CC668B009A851C /* AppDelegate.swift */,
+				DD4BC67325CC668F009A851C /* LaunchScreen.storyboard */,
+				DD4BC67125CC668F009A851C /* Assets.xcassets */,
 			);
 			path = "Js Drinks";
+			sourceTree = "<group>";
+		};
+		DD4BC68A25CC67FA009A851C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD4BC68B25CC6801009A851C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD4BC68C25CC6807009A851C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD4BC66C25CC668B009A851C /* ViewController.swift */,
+				DD4BC69D25CC75A8009A851C /* DrinksListingTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DD4BC68D25CC6823009A851C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DD4BC68125CC673D009A851C /* API.swift */,
+				DD4BC67D25CC66B9009A851C /* Drink.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +177,9 @@
 			files = (
 				DD4BC66D25CC668B009A851C /* ViewController.swift in Sources */,
 				DD4BC66925CC668B009A851C /* AppDelegate.swift in Sources */,
-				DD4BC66B25CC668B009A851C /* SceneDelegate.swift in Sources */,
+				DD4BC67E25CC66B9009A851C /* Drink.swift in Sources */,
+				DD4BC68225CC673D009A851C /* API.swift in Sources */,
+				DD4BC69E25CC75A8009A851C /* DrinksListingTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
