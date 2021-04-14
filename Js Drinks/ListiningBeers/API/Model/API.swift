@@ -74,44 +74,44 @@ class API {
         
     }
     
-//    func loadImage(basePathImage: String,onComplete: @escaping (UIImage) -> Void) {
-//            
-//        guard let urlImage = URL(string: basePathImage) else {return}
-//        
-//        let task = session.dataTask(with: urlImage) { (data, response, error) in
-//            
-//            if let error = error {
-//                print(error)
-//                return
-//            }
-//            
-//            guard let response = response as? HTTPURLResponse else {
-//                print("Não teve resposta!!")
-//                return
-//            }
-//            
-//            if !(200...299 ~= response.statusCode) {
-//                print("Status code inválido:", response.statusCode)
-//                return
-//            }
-//            
-//            guard let data = data else {
-//                print("Não vieram dados!!")
-//                return
-//            }
-//            
-//
-//            do {
-//                guard  let myImage = UIImage(data: data) else { return}
-//                onComplete(myImage)
-//                print("foram encontrados dados na api\(data)")
-//            } catch {
-//                print(error)
-//            }
-//        }
-//        task.resume()
-//        
-//    }
+    func loadImage(basePathImage: String,onComplete: @escaping (UIImage) -> Void) {
+            
+        guard let urlImage = URL(string: basePathImage) else {return}
+        
+        let task = session.dataTask(with: urlImage) { (data, response, error) in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                print("Não teve resposta!!")
+                return
+            }
+            
+            if !(200...299 ~= response.statusCode) {
+                print("Status code inválido:", response.statusCode)
+                return
+            }
+            
+            guard let data = data else {
+                print("Não vieram dados!!")
+                return
+            }
+            
+
+            do {
+                guard  let myImage = UIImage(data: data) else { return}
+                onComplete(myImage)
+                print("foram encontrados dados na api\(data)")
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+        
+    }
     
     
     

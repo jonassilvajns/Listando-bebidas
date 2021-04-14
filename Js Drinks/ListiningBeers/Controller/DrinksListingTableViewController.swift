@@ -26,7 +26,6 @@ class DrinksListingTableViewController: UITableViewController {
         
     }
     
-    
     // MARK: - Methods
     private func loadDrinks() {
         API().loadDrinks {[weak self] (result) in
@@ -58,21 +57,7 @@ class DrinksListingTableViewController: UITableViewController {
             }
         }
     }
-    
-    
-     
-//    private func loadImage(url: String) {
-//        API().loadImage(basePathImage: url) { (myImage) in
-//            self.loadImage(url: myImage as! String)
-//
-//        }
-//    }
-    
-   
-    
 
-
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -84,44 +69,29 @@ class DrinksListingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            let drink = drinks[indexPath.row]
-            let url = NSURL(string:drink.imagem)
-            let imagedata = NSData.init(contentsOf: url! as URL)
-
-        
-        //cell.textLabel?.text      = drink.produto
-            cell.textLabel?.text        =     drink.produto
-//        if drink.desconto is === true  {
-//            print("é verdadeiro")
-//        }
-        cell.detailTextLabel?.text  = (" R$ \(drink.preco)")
-      
-        if imagedata != nil {
-            
-            cell.imageView?.image = UIImage(data:imagedata! as Data)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? BeerTableViewCell else{
+            return UITableViewCell()
         }
-
+            let drink = drinks[indexPath.row]
         
+        cell.configure(with: drink)
             return cell
- 
    
     }
-}
-//        cell.imageView.image = loadImage(url:drink.imagem)
-
-//extension UIImageView {
-//   private func loadImage(url: URL) {
-//        DispatchQueue.global().async { [weak self] in
-//            if let data = try? Data(contentsOf: url) {
-//                if let image = UIImage(data: data) {
-//                    DispatchQueue.main.async {
-//                        self?.image = image
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+               let vc = segue.description as? ProductViewController
+        vc?.drinks = drinks[tableView.indexPathForSelectedRow!.row]
+        
+            }
+    
+        }
+    
+    
 
 
+
+
+
+        
