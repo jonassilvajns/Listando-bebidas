@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93768FC308BB80791CFB36C4 /* Pods_Js_Drinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E724078DCB6D6272971A82 /* Pods_Js_Drinks.framework */; };
+		B6877D9627BCB71A00C2AFF3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B6877D9527BCB71A00C2AFF3 /* Kingfisher */; };
 		DD4BC66925CC668B009A851C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BC66825CC668B009A851C /* AppDelegate.swift */; };
 		DD4BC66D25CC668B009A851C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BC66C25CC668B009A851C /* ProductViewController.swift */; };
 		DD4BC67025CC668B009A851C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4BC66E25CC668B009A851C /* Main.storyboard */; };
@@ -19,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EFA3285FBB4D8006B1A9600 /* Pods-Js Drinks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Js Drinks.release.xcconfig"; path = "Target Support Files/Pods-Js Drinks/Pods-Js Drinks.release.xcconfig"; sourceTree = "<group>"; };
+		7C033D4C83EF25EBD7F52CEA /* Pods-Js Drinks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Js Drinks.debug.xcconfig"; path = "Target Support Files/Pods-Js Drinks/Pods-Js Drinks.debug.xcconfig"; sourceTree = "<group>"; };
+		B2E724078DCB6D6272971A82 /* Pods_Js_Drinks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Js_Drinks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4BC66525CC668B009A851C /* Js Drinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Js Drinks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4BC66825CC668B009A851C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD4BC66C25CC668B009A851C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
@@ -37,17 +42,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6877D9627BCB71A00C2AFF3 /* Kingfisher in Frameworks */,
+				93768FC308BB80791CFB36C4 /* Pods_Js_Drinks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4060D2E20D06F87AE97E2257 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2E724078DCB6D6272971A82 /* Pods_Js_Drinks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B659881027BDDFAD0066D5D8 /* DetailsBeers */ = {
+			isa = PBXGroup;
+			children = (
+				B659881327BDDFDF0066D5D8 /* Controller */,
+				B659881227BDDFD10066D5D8 /* Model */,
+				B659881127BDDFC70066D5D8 /* View */,
+			);
+			path = DetailsBeers;
+			sourceTree = "<group>";
+		};
+		B659881127BDDFC70066D5D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B659881227BDDFD10066D5D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B659881327BDDFDF0066D5D8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD4BC66C25CC668B009A851C /* ProductViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		DD4BC65C25CC668B009A851C = {
 			isa = PBXGroup;
 			children = (
 				DD4BC66725CC668B009A851C /* Js Drinks */,
 				DD4BC66625CC668B009A851C /* Products */,
+				ED4A3829F889C8727843ABB9 /* Pods */,
+				4060D2E20D06F87AE97E2257 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,8 +113,9 @@
 			children = (
 				DD626B6C25EDC7CA0010EDCF /* Main */,
 				DD626B6725EDC2ED0010EDCF /* ListiningBeers */,
-				DD4BC67625CC668F009A851C /* Info.plist */,
+				B659881027BDDFAD0066D5D8 /* DetailsBeers */,
 				DD4BC67325CC668F009A851C /* LaunchScreen.storyboard */,
+				DD4BC67625CC668F009A851C /* Info.plist */,
 				DD4BC67125CC668F009A851C /* Assets.xcassets */,
 			);
 			path = "Js Drinks";
@@ -112,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				DD4BC69D25CC75A8009A851C /* DrinksListingTableViewController.swift */,
-				DD4BC66C25CC668B009A851C /* ProductViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -133,6 +182,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		ED4A3829F889C8727843ABB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C033D4C83EF25EBD7F52CEA /* Pods-Js Drinks.debug.xcconfig */,
+				1EFA3285FBB4D8006B1A9600 /* Pods-Js Drinks.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,15 +198,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD4BC67925CC668F009A851C /* Build configuration list for PBXNativeTarget "Js Drinks" */;
 			buildPhases = (
+				05FED45E95F7A1DC7D7895FB /* [CP] Check Pods Manifest.lock */,
 				DD4BC66125CC668B009A851C /* Sources */,
 				DD4BC66225CC668B009A851C /* Frameworks */,
 				DD4BC66325CC668B009A851C /* Resources */,
+				7407E3F44908B2DC5BEC2849 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Js Drinks";
+			packageProductDependencies = (
+				B6877D9527BCB71A00C2AFF3 /* Kingfisher */,
+			);
 			productName = "Js Drinks";
 			productReference = DD4BC66525CC668B009A851C /* Js Drinks.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +239,9 @@
 				Base,
 			);
 			mainGroup = DD4BC65C25CC668B009A851C;
+			packageReferences = (
+				B6877D9427BCB71A00C2AFF3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = DD4BC66625CC668B009A851C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,6 +263,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05FED45E95F7A1DC7D7895FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Js Drinks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7407E3F44908B2DC5BEC2849 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Js Drinks/Pods-Js Drinks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Js Drinks/Pods-Js Drinks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Js Drinks/Pods-Js Drinks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD4BC66125CC668B009A851C /* Sources */ = {
@@ -352,6 +460,7 @@
 		};
 		DD4BC67A25CC668F009A851C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C033D4C83EF25EBD7F52CEA /* Pods-Js Drinks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -371,6 +480,7 @@
 		};
 		DD4BC67B25CC668F009A851C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EFA3285FBB4D8006B1A9600 /* Pods-Js Drinks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -410,6 +520,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B6877D9427BCB71A00C2AFF3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B6877D9527BCB71A00C2AFF3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6877D9427BCB71A00C2AFF3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD4BC65D25CC668B009A851C /* Project object */;
 }

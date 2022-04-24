@@ -6,11 +6,12 @@
 //
 import Foundation
 import UIKit
+import Kingfisher
+
 
 class DrinksListingTableViewController: UITableViewController {
 
     var drinks: [Drink] = []
-    
     
     
     override func viewDidLoad() {
@@ -18,12 +19,24 @@ class DrinksListingTableViewController: UITableViewController {
         
         
     }
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productViewController = segue.destination as? ProductViewController,
+           let row = tableView.indexPathForSelectedRow?.row {
+            
+            let drinke = drinks[row]
+            productViewController.drinks = drinke
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadDrinks()
-        
-        
+    
+
     }
     
     // MARK: - Methods
@@ -78,20 +91,18 @@ class DrinksListingTableViewController: UITableViewController {
             return cell
    
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-               let vc = segue.description as? ProductViewController
-        vc?.drinks = drinks[tableView.indexPathForSelectedRow!.row]
-        
-            }
-    
-        }
-    
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == segueIdentifier,
+//           let destination = segue.destination as? ProductViewController,
+//           let selectedIndex = tableView.indexPathForSelectedRow?.row
+//        {
+//            destination.address = self.addresses[selectedIndex].text
+//            self.navigationController?.pushViewController(destination, animated: true) // For example
+    //}
+//        }
 
-
-
-
+    
+    
+}
 
         

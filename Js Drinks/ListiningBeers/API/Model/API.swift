@@ -74,7 +74,7 @@ class API {
         
     }
     
-    func loadImage(basePathImage: String,onComplete: @escaping (UIImage) -> Void) {
+    func loadImage(basePathImage: String, onComplete: @escaping (UIImage) -> Void) {
             
         guard let urlImage = URL(string: basePathImage) else {return}
         
@@ -104,8 +104,9 @@ class API {
             do {
                 guard  let myImage = UIImage(data: data) else { return}
                 onComplete(myImage)
-                print("foram encontrados dados na api\(data)")
+                print("A imagem foi consumida\(data)")
             } catch {
+                
                 print(error)
             }
         }
@@ -117,3 +118,6 @@ class API {
     
 
 }
+
+
+
